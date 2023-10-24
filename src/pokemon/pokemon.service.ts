@@ -10,7 +10,7 @@ export class PokemonService {
   constructor(
     @InjectRepository(Pokemon)
     private pokemonRepository: Repository<Pokemon>,
-    private cacheService: CacheService,
+    // private cacheService: CacheService,
     private dataService: DataPokemonService,
   ) {}
   async getCache(): Promise<any> {

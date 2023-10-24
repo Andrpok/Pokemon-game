@@ -5,10 +5,12 @@ import { AppService } from './app.service';
 import { PokemonModule } from './pokemon/pokemon.module';
 import { Pokemon } from './entities/pokemon.entity';
 import { MigrationService } from './services/migration';
+import { RedisModule } from './services/redis';
 
 const Client = require('prom-client');
 @Module({
   imports: [
+    RedisModule,
     PokemonModule,
     TypeOrmModule.forRoot({
       type: 'mysql',

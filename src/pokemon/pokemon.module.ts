@@ -6,9 +6,10 @@ import { Pokemon } from '../entities/pokemon.entity';
 import { CacheService } from '../services/cache';
 import { ApiPokemonService } from './api.pokemon.service';
 import { DataPokemonService } from './data.pokemon.service';
+import { RedisModule } from '../services/redis';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Pokemon])],
+  imports: [RedisModule, TypeOrmModule.forFeature([Pokemon])],
   controllers: [PokemonController],
   providers: [
     PokemonService,
